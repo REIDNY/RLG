@@ -22,12 +22,12 @@
                 $result =  mysqli_query($conn, "SELECT * FROM accounts WHERE email='$email' AND pass='$pass'")
                     or die("Select Error");
                 $row = mysqli_fetch_assoc($result);
-
+                
                 if(is_array($row) && !empty($row)){
                     $_SESSION['full_name'] = $row['full_name'];
                     $_SESSION['valid'] = $row['email'];
                     $_SESSION['id'] = $row['Id'];
-                    header("Location: homepage.html");
+                    header("Location: homepage.php");
                     exit();
                 }
                 else{

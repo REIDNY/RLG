@@ -13,11 +13,16 @@
 <body>
     <table>
         <tr>
-            <td id="welcomeMessage"></td>
-            <td><button id="logoutButton" class="btn">Log Out</button></td>
+            <td><p>Welcome, <?php echo isset($_SESSION['full_name']) ? $_SESSION['full_name'] : 'Guest'; ?>!</p></td>
+            <?php
+                for ($i = 0; $i < 25; $i++) {
+                    echo "<td></td>";
+                }
+            ?>
+            <td><a href="logout.php" class="btn">Log Out</a></td>
         </tr>
         <tr>
-            <td> <h2> Let's Play with Math! </h2><br></td>
+            <td><br><h2> Let's Play with Math! </h2><br></td>
         </tr>
         <tr>
            <td>
@@ -67,6 +72,5 @@
             </td>
         </tr>
     </table>
-    <script src="home.js"></script>
 </body>
 </html>

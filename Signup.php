@@ -19,7 +19,6 @@
                 $verify_query = mysqli_query($conn, "SELECT email FROM accounts WHERE email = '$email'");
                 
                 if ($verify_query === false) {
-                    // Handle query execution error
                     die("Error: " . mysqli_error($conn));
                 }
                 elseif (mysqli_num_rows($verify_query) != 0){
